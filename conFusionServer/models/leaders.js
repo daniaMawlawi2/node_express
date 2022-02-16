@@ -1,5 +1,5 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 var leaderSchema = new Schema(
   {
@@ -7,6 +7,10 @@ var leaderSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+    },
+    description: {
+      type: String,
+      required: true,
     },
     image: {
       type: String,
@@ -20,13 +24,9 @@ var leaderSchema = new Schema(
       type: String,
       required: true,
     },
-    description: {
-      type: String,
-      required: true,
-    },
     featured: {
       type: Boolean,
-      required: false,
+      default: false,
     },
   },
   {
